@@ -1,0 +1,46 @@
+.info-section {
+  @include bg-image;
+  padding-top: 230px;
+  padding-bottom: 100px;
+
+  &__box {
+    background: rgba(#232323, 0.9);
+    padding: 50px 30px;
+
+    h3 {
+      font-family: $font-1;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.075em;
+      color: #e8e8e8;
+    }
+
+    h2 {
+      font-family: $font-1;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 25px 0;
+    }
+    p {
+      font-family: $font-1;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #e8e8e8;
+    }
+
+    .template-btn {
+      margin-top: 46px;
+    }
+  }
+
+//   &--mirror {
+//     .row {
+//       justify-content: flex-end;
+//     }
+//   }
+}
