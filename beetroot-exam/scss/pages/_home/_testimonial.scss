@@ -1,0 +1,98 @@
+.testimonial-section {
+  @include bg-image;
+  padding-top: 120px;
+  padding-bottom: 200px;
+
+  @include media(992px) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 1.6em;
+    color: #fff;
+    font-weight: 400;
+    font-family: $font-2;
+    text-align: center;
+
+    @include media(767px) {
+      font-size: 30px;
+    }
+  }
+
+  &__box {
+    margin-top: 90px;
+    display: flex;
+
+    @include media(767px) {
+      flex-direction: column;
+    }
+
+    @include media(992px) {
+      margin-top: 50px;
+    }
+
+    @include media(767px) {
+      margin-top: 30px;
+    }
+
+    .box {
+      &__card {
+        padding: 50px 54px 50px 61px;
+        background-color: $color-black-light;
+        @include media(992px) {
+          width: 50%;
+        }
+
+        @include media(767px) {
+          width: 100%;
+          padding: 30px;
+        }
+      }
+
+      &__title {
+        font-family: $font-1;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        color: $color-white;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+
+      &__text {
+        .fas {
+          color: $color-blue;
+          transform: translateY(-100%);
+        }
+
+        font-family: $font-1;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: $color-white;
+      }
+      &__image {
+        max-width: 445px;
+        width: 100%;
+        @include media(992px) {
+          width: 50%;
+        }
+
+        @include media(767px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        img {
+          height: 100%;
+          @include media(767px) {
+            height: auto;
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

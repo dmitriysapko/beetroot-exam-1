@@ -2,13 +2,23 @@
   background: $color-black-light;
   padding-top: 100px;
   padding-bottom: 120px;
+
+  @include media(767px) {
+    padding: 50px 0;
+  }
+
   &__items {
     display: flex;
     align-items: center;
     justify-content: space-around;
     max-width: 975px;
     margin: 0 auto;
+
+    @include media(767px) {
+      flex-direction: column;
+    }
   }
+
   &__item {
     text-align: center;
     display: flex;
@@ -16,6 +26,15 @@
     align-items: center;
     position: relative;
     width: calc(100% / 3);
+
+    @include media(767px) {
+      width: 100%;
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
     &:first-child,
     &:nth-child(2) {
@@ -28,6 +47,10 @@
         background: url('../images/icons/dotted-devider.png') no-repeat center
           center / 100% 40%;
         height: 100%;
+
+        @include media(767px) {
+          display: none;
+        }
       }
     }
 
@@ -38,13 +61,11 @@
     }
 
     .item {
-      &__icon {
-      }
       &__text {
         font-family: $font-2;
         font-weight: 400;
         font-size: 36px;
-        color: #e8e8e8;
+        color: $color-white;
         margin-top: 35px;
       }
     }
