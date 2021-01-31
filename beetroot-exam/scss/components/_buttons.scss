@@ -11,8 +11,32 @@
   font-weight: 400;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 
-  &:hover {
+  &:after {
+    @include transition;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #3737cc linear-gradient(45deg, #1f3eae 40%, #3737cc 40%);
+    z-index: -1;
+    opacity: 0;
+    color: #fff;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    @include transition;
+    opacity: 1;
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus {
     color: #fff;
   }
 }

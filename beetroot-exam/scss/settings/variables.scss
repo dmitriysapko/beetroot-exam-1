@@ -1,7 +1,13 @@
-$font-1: 'Josefin Sans', sans-serif;
-$font-2: 'Aleo', serif;
+$font-1: 'Josefin Sans',
+sans-serif;
+$font-2: 'Aleo',
+serif;
 
 $color-blue-dark: #496bfe;
 $color-blue: #5474fd;
+$color-blue-denim:#1f3eae;
+$color-blue-midnight:#3737cc;
 $color-black-light: #333333;
+$color-white: #e8e8e8;
 $button-gradient: linear-gradient(45deg, $color-blue-dark 40%, $color-blue 40%);
+$button-gradient-hover: linear-gradient(45deg, $color-blue-denim 40%, $color-blue-midnight 40%);

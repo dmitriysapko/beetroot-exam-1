@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
+
   &__row {
     display: flex;
     align-items: center;
@@ -12,22 +13,158 @@
     min-height: 80px;
   }
 
+  &__logo {
+    z-index: 30;
+  }
+
   &__nav {
+    display: block;
+
+    @include media(767px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background: $color-blue;
+      z-index: 20;
+      transform: translateX(100%);
+      @include transition;
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+
     ul {
       display: flex;
       align-items: center;
+
+      @include media(767px) {
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+
       li {
         margin-right: 42px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 100%;
+          background: #e8e8e8;
+          transform: scale3d(0, 0, 1);
+          @include transition;
+        }
+
+        &:hover {
+          &::after {
+            transform: scale3d(1, 1, 1);
+          }
+        }
+
+        @include media(800px) {
+          margin-right: 20px;
+        }
+
+        @include media(767px) {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+
         &:last-child {
           margin-right: 0;
+
+          @include media(767px) {
+            margin-bottom: 0;
+          }
         }
+
         a {
           font-family: $font-2;
           font-weight: 400;
           font-size: 14px;
-          color: #fff;
+          color: $color-white;
           text-transform: uppercase;
         }
+      }
+    }
+  }
+
+  &__mobile-btn {
+    width: 42px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.3s ease;
+    z-index: 30;
+    display: none;
+
+    @include media(767px) {
+      display: block;
+    }
+
+    &.open {
+      span {
+        background: transparent;
+        &::after {
+          transform: rotate(45deg);
+          bottom: 0;
+          transition-delay: 0s, 0.15s;
+          background: #fff;
+        }
+        &::before {
+          transform: rotate(-45deg);
+          top: 0;
+          background: #fff;
+          transition-delay: 0s, 0.15s;
+        }
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 2px;
+      width: 100%;
+      background: #fff;
+      display: block;
+      transition: all 0.3s ease;
+      transition: background 0s 0.15s;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        transition: all 0.3s ease;
+        transition-duration: 0.15s, 0.15s;
+        transition-delay: 0.15s, 0s;
+        transition-property: top, transform, background;
+        left: 0;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        transition: all 0.3s ease;
+        transition-duration: 0.15s, 0.15s;
+        transition-delay: 0.15s, 0s;
+        transition-property: bottom, transform, background;
+        left: 0;
       }
     }
   }

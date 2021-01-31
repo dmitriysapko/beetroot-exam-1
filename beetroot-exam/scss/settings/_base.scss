@@ -5,6 +5,7 @@ body {
 a {
   outline: none;
   text-decoration: none;
+
   &:focus,
   &:hover,
   &:active {
@@ -26,4 +27,8 @@ button {
   -webkit-appearance: none;
   border: none;
   background: none;
+}
+
+img {
+  max-width: 100%;
 }

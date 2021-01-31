@@ -24,7 +24,11 @@
       font-size: 48px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #fff;
+      color: $color-white;
+
+      @include media(767px) {
+        font-size: 36px;
+      }
     }
 
     h2 {
@@ -32,13 +36,21 @@
       line-height: 26px;
       font-family: $font-1;
       font-weight: 400;
-      color: #fff;
+      color: $color-white;
       letter-spacing: 0.31em;
+
+      @include media(767px) {
+        font-size: 18px;
+      }
     }
   }
 
   &__search {
     margin-top: 52px;
+
+    @include media(767px) {
+      margin-top: 30px;
+    }
   }
 
   &__scroll-down {
@@ -47,10 +59,14 @@
     line-height: 26px;
     letter-spacing: 0.2em;
     font-size: 14px;
-    color: #fff;
+    color: $color-white;
     position: relative;
     margin-top: 120px;
     cursor: pointer;
+
+    @include media(767px) {
+      margin-top: 50px;
+    }
 
     img {
       position: absolute;

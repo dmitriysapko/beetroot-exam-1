@@ -1,0 +1,52 @@
+.footer {
+  background-color: #232323;
+  color: $color-white;
+
+  &__content {
+    padding: 120px 0 54px;
+    text-align: center;
+  }
+
+  &__logo {
+    img {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 26px;
+    color: $color-white;
+    font-family: $font-1;
+  }
+
+  &__socials {
+    margin-top: 30px;
+
+    ul {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin-right: 25px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: inline-block;
+          color: $color-white;
+
+          &:hover,
+          &:focus {
+            @include transition;
+            color: $color-blue;
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}
